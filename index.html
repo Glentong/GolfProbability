@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+ <link rel="stylesheet" type="text/css" href="css/css/bootstrap.css">
+ <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script type="text/javascript" src="css/js/jquery.js"></script>
+  <script type="text/javascript" src="css/js/bootstrap.js"></script>
+  <link rel="stylesheet" type="text/css" href="font-awasome/css/all.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+	<head>
+		<title>Tugas Glenny ke 2</title>
+	</head>
+	<body >
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg" style="background: #000;">
+  <div class="container">
+ <div class="col-sm-12" style="color:#FF6347;">Golf Percentage</div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+   <div class="collapse navbar-collapse" id="navbarSupportedContent" style="color:#FF6347;">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active" >
+        <a class="nav-link text-secondary" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-secondary" href="#">About</a>
+      </li>  
+      <li class="nav-item">
+        <a class="nav-link text-secondary" href="#">Contact</a>
+      </li>  
+    </ul>  
+   </div>
+  </div>
+<!--  Container/Nav End  -->
+</div>
+</nav>
+
+<!-- Landing Page -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12" style="color:#FF6347;">
+      <div id="landing">
+        <h1>Golf Percentage </h1>
+        <h3> Apakah hari ini cocok bermain golf?</h3>
+        <hr class="hr">
+        <p id="Main?">Hasil Akhir</p>
+        <button type="button" class="btn btn-outline-secondary" onclick="kalkulator()"><i class="fas fa-golf-ball"></i> Get Started!</button>
+        <button type="button" class="btn btn-outline-secondary"><i class="fas fa-redo"></i>
+ <a href="javascript:location.reload(true)" class="text-secondary">Refresh</a> 
+        </button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Container End -->
+</div>
+
+<!-- Content -->
+
+<script type="text/javascript">
+			function kalkulator(){
+			var Cuaca = parseFloat(prompt("Masukan Cuaca Pada Kondisi ya?Rainny = 2, Overcast = 4  Sunny = 3") );
+			
+			var Temperatur = parseFloat(prompt("Masukan Temperatur Pada Kondisi Ya? Hot = 2, Mild = 4, Coll = 3;"));
+			var Lembab = parseFloat(prompt("Masukan Kelembaban pada kondisi Ya?  High=3, Normal=6"));
+			var berangin = parseFloat(prompt("Apakah berangin pada kondisi Ya?, True=3, False=6"));
+
+			var Cuaca2 = parseFloat(prompt("Silahkan Masukan ulang Cuaca? Rainny = 3, Overcast = 0,  Sunny = 2") );
+			var Temperatur2 = parseFloat(prompt("Silahkan Masukan ulang Temperatur ? Hot = 2, Mild = 2, Cool = 1;"));
+			var Lembab2 = parseFloat(prompt("Sila Masukan ulang Kelembaban ? High=4, Normal=1"));
+			var berangin2 = parseFloat(prompt("Sila masukan ulang, apakah berangin ? True=2, False=3"));
+
+
+			 var hasilYa =  Cuaca/9 * Temperatur/9 *Lembab/9 * berangin/9 * 9/14
+			 var HasilGagal =  Cuaca2/5 * Temperatur2/5 *Lembab2/5 * berangin2/5 * 5/14
+			 var hastot = HasilGagal+hasilYa
+
+			 var JumlahYa = hasilYa / hastot
+			 var JumlahGagal = HasilGagal / hastot
+
+			
+			if (JumlahYa>JumlahGagal){
+				document.getElementById("Main?").innerHTML = "Cuaca hari ini bagus untuk bermain";
+			}
+			else if (JumlahGagal>JumlahYa){
+				document.getElementById("Main?").innerHTML = "Sebaiknya jangan main dulu";
+			}
+				}
+
+				
+		</script>
+		<script>
+			
+			function location.reload(); 
+		</script>
+	</body>
+</html>
+
+
